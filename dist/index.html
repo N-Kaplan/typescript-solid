@@ -4,36 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Liskov substitution principle</title>
+    <title>Interface segregation principle</title>
 </head>
 <body>
 
-<h1>Liskov substitution principle</h1>
+<h1>Interface segregation principle</h1>
 
-<h2>Shopping basket</h2>
-<table id="cart">
-    <thead>
-    <tr>
-        <th>Product</th>
-        <th>Original price</th>
-        <th>Final price</th>
-        <th>Calculation</th>
-    </tr>
-    </thead>
-    <tbody></tbody>
-</table>
+<form id="login-form">
+    <label for="password">Password:</label>
+    <input type="text" id="password">
 
-<style>
-    table {
-        width: 100%;
-    }
-    th {
-        text-align: left;
-    }
+    <fieldset>
+        <legend>Auth method</legend>
 
-</style>
+        <label><input type="radio" name="type" value="password" id="typePassword" checked=""> Password</label>
+        <label><input type="radio" name="type" value="google" id="typeGoogle"> Google login</label>
+        <label><input type="radio" name="type" value="facebook" id="typeFacebook"> Facebook login</label>
+    </fieldset>
 
+    <label><input type="checkbox" name="admin" id="loginAsAdmin">Login as admin</label>
 
-<script src="/index.bc9b6ab2.js"></script>
+    <br>
+    <input type="submit" value="Login">
+</form>
+
+<p><a href="#" id="resetPassword">Reset password</a></p>
+
+<!--<script src="old.js"></script>-->
+<script src="/index.0cc9355f.js"></script>
 </body>
 </html>

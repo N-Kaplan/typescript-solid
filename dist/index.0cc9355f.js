@@ -1,58 +1,58 @@
-var User = /** @class */ (function () {
+var User1 = function() {
     function User() {
         this._password = 'user';
     }
     //Interesting detail here: while I did not define a return type or param type, any deviation from the interface will give you an error.
     // Test it out by uncommenting the code below.
-    User.prototype.checkGoogleLogin = function (token) {
+    User.prototype.checkGoogleLogin = function(token) {
         // return "this will not work";
-        return (token === this._googleToken);
+        return token === this._googleToken;
     };
-    User.prototype.setGoogleToken = function (token) {
+    User.prototype.setGoogleToken = function(token) {
         this._googleToken = token;
     };
-    User.prototype.getFacebookLogin = function (token) {
-        return (token === this._facebookToken);
+    User.prototype.getFacebookLogin = function(token) {
+        return token === this._facebookToken;
     };
-    User.prototype.setFacebookToken = function (token) {
+    User.prototype.setFacebookToken = function(token) {
         this._facebookToken = token;
     };
-    User.prototype.checkPassword = function (password) {
-        return (password === this._password);
+    User.prototype.checkPassword = function(password) {
+        return password === this._password;
     };
-    User.prototype.resetPassword = function () {
+    User.prototype.resetPassword = function() {
         this._password = prompt('What is your new password?');
     };
     return User;
-}());
+}();
 //admin cannot use google or facebook token
-var Admin = /** @class */ (function () {
+var Admin1 = function() {
     function Admin() {
         this._password = 'admin';
     }
-    Admin.prototype.checkPassword = function (password) {
-        return (password === this._password);
+    Admin.prototype.checkPassword = function(password) {
+        return password === this._password;
     };
-    Admin.prototype.resetPassword = function () {
+    Admin.prototype.resetPassword = function() {
         this._password = prompt('What is your new password?');
     };
     return Admin;
-}());
+}();
 //googlebot can only use google token
-var GoogleBot = /** @class */ (function () {
+var GoogleBot1 = function() {
     function GoogleBot() {
     }
     //Interesting detail here: while I did not define a return type or param type, any deviation from the interface will give you an error.
     // Test it out by uncommenting the code below.
-    GoogleBot.prototype.checkGoogleLogin = function (token) {
+    GoogleBot.prototype.checkGoogleLogin = function(token) {
         // return "this will not work";
-        return (token === this._googleToken);
+        return token === this._googleToken;
     };
-    GoogleBot.prototype.setGoogleToken = function (token) {
+    GoogleBot.prototype.setGoogleToken = function(token) {
         this._googleToken = token;
     };
     return GoogleBot;
-}());
+}();
 //implementing segregated interfaces:
 var passwordElement = document.querySelector('#password');
 var typePasswordElement = document.querySelector('#typePassword');
@@ -60,10 +60,10 @@ var typeGoogleElement = document.querySelector('#typeGoogle');
 var typeFacebookElement = document.querySelector('#typeFacebook');
 var loginAsAdminElement = document.querySelector('#loginAsAdmin');
 var resetPasswordElement = document.querySelector('#resetPassword');
-var guest = new User;
-var admin = new Admin;
-var googleBot = new GoogleBot();
-document.querySelector('#login-form').addEventListener('submit', function (event) {
+var guest = new User1;
+var admin = new Admin1;
+var googleBot = new GoogleBot1();
+document.querySelector('#login-form').addEventListener('submit', function(event) {
     event.preventDefault();
     var user = loginAsAdminElement.checked ? admin : guest;
     if (user === guest) {
@@ -72,31 +72,25 @@ document.querySelector('#login-form').addEventListener('submit', function (event
     }
     debugger;
     var auth = false;
-    switch (true) {
+    switch(true){
         case typePasswordElement.checked:
             auth = user.checkPassword(passwordElement.value);
             break;
         case typeGoogleElement.checked:
-            if (user === guest) {
-                auth = user.checkGoogleLogin('secret_token_google');
-            }
+            if (user === guest) auth = user.checkGoogleLogin('secret_token_google');
             break;
         case typeFacebookElement.checked:
             debugger;
-            if (user === guest) {
-                auth = user.getFacebookLogin('secret_token_fb');
-            }
+            if (user === guest) auth = user.getFacebookLogin('secret_token_fb');
             break;
     }
-    if (auth) {
-        alert('login success');
-    }
-    else {
-        alert('login failed');
-    }
+    if (auth) alert('login success');
+    else alert('login failed');
 });
-resetPasswordElement.addEventListener('click', function (event) {
+resetPasswordElement.addEventListener('click', function(event) {
     event.preventDefault();
     var user = loginAsAdminElement.checked ? admin : guest;
     user.resetPassword();
 });
+
+//# sourceMappingURL=index.0cc9355f.js.map
