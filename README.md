@@ -10,3 +10,5 @@ SOLID principles:
 2. Liskov principle: objects in a program should be replaceable with instances of their subtypes. [further reading](https://reflectoring.io/lsp-explained/).<br>
    POLYMORPHISM: 2 different classes using the same interface are functionally interchangeable.<br>
    Design by contract: assumes all client components that invoke an operation on a server component will meet the preconditions specified as required for that operation.<br>
+3. Interface segregation principle: interfaces should be precise and modular.<br>
+    Guideline: make sure interfaces don't include unnecessary dependencies.
