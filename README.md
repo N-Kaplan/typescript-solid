@@ -88,7 +88,7 @@ These principles establish practices that lend to developing software with consi
 1. **Open-Closed principle**: classes should be open for extension, closed for modification.
    Dependencies: pass 1 object to another as a parameter.<br>
    BLACKBOX principle: it should be possible to guess a function's purpose through its signature.
-2. **Liskov principle**: objects in a program should be replaceable with instances of their subtypes. [further reading](https://reflectoring.io/lsp-explained/). <br>
+2. **Liskov principle**: objects in a program should be replaceable with instances of their subtypes. Further reading [here](https://reflectoring.io/lsp-explained/) and [here](https://stackify.com/solid-design-liskov-substitution-principle/). <br>
    POLYMORPHISM: 2 different classes using the same interface are functionally interchangeable.<br>
    Design by contract: assumes all client components that invoke an operation on a server component will meet the preconditions specified as required for that operation.<br>
 3. **Interface segregation principle**: interfaces should be precise and modular.<br>
