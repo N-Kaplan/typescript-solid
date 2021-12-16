@@ -6,7 +6,7 @@ Introduction to TypeScript and SOLID at BeCode training
 
 - Repository: `typescript-solid`
 - Type of Challenge: `Learning Challenge`
-- Duration: `2 days: 14/12/2021-15-12/2021`
+- Duration: `2 days: 14/12/2021-15/12/2021`
 - Deployment strategy : `NA`
 - Team challenge : `solo`
 
